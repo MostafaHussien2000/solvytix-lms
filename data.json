@@ -69,7 +69,7 @@
       "id": "1a2b3c4d-5678-9101-1121-314151617181",
       "name": "John Doe",
       "bio": "A passionate React developer with 5+ years of experience in front-end development.",
-      "image": "https://example.com/john-doe.jpg",
+      "image": "https://i.pravatar.cc/150?u=a042581f4e290267088",
       "hourlyRate": 50,
       "courses": [
         {
@@ -96,7 +96,7 @@
       "id": "1a2b3c4d-5678-9101-1121-314151617182",
       "name": "Jane Smith",
       "bio": "Full-stack developer with a passion for teaching modern web technologies.",
-      "image": "https://example.com/jane-smith.jpg",
+      "image": "https://i.pravatar.cc/150?u=a042581f4e290267az0",
       "hourlyRate": 60,
       "courses": [
         {
@@ -132,7 +132,7 @@
       "id": "1a2b3c4d-5678-9101-1121-314151617185",
       "name": "Sophia Martinez",
       "bio": "Cybersecurity expert with extensive knowledge in penetration testing and ethical hacking.",
-      "image": "https://example.com/sophia-martinez.jpg",
+      "image": "https://i.pravatar.cc/150?u=a042581f4e1loopifiy",
       "hourlyRate": 90,
       "courses": [
         {
@@ -148,9 +148,9 @@
     },
     {
       "id": "1a2b3c4d-5678-9101-1121-314151617184",
-      "name": "Michael Brown",
+      "name": "Dina Mohamed",
       "bio": "UI/UX designer with a decade of experience in creating intuitive and engaging designs.",
-      "image": "https://example.com/michael-brown.jpg",
+      "image": "https://i.pravatar.cc/150?u=a042581f400067088",
       "hourlyRate": 45,
       "courses": [
         {
@@ -168,7 +168,7 @@
       "id": "1a2b3c4d-5678-9101-1121-314151617184",
       "name": "Michael Lee",
       "bio": "AI & Data Science specialist with 7+ years of experience in deep learning and big data.",
-      "image": "https://example.com/michael-lee.jpg",
+      "image": "https://i.pravatar.cc/150?u=a04251874e290267088",
       "hourlyRate": 85,
       "courses": [
         {
