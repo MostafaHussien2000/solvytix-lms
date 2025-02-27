@@ -11,6 +11,7 @@ import Trainers from "@/pages/Trainers";
 import Login from "@/pages/Login";
 import NotFound from "@/pages/NotFound";
 import CourseDetails from "./pages/CourseDetails";
+import TrainerDetails from "./pages/TrainerDetails";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<CourseDetails />} />
           <Route path="/trainers" element={<Trainers />} />
+          <Route path="/trainers/:id" element={<TrainerDetails />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
