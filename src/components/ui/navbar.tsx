@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 /* UI Components
 ================ */
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "../ThemeToggle";
 
 function Navbar() {
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container mx-auto flex h-16 items-center">
         <div className="mr-8 flex">
           <Link to="/dashboard" className="flex items-center space-x-2">
             <span className="text-xl font-bold tracking-tight">
@@ -29,6 +30,7 @@ function Navbar() {
           </Link>
         </div>
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
           <Button variant="ghost">Logout</Button>
         </div>
       </div>
