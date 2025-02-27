@@ -1,7 +1,7 @@
 import { Trainer } from "@/types";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 
-const baseURL = "";
+const baseURL = "http://localhost:5000/trainers";
 
 export const QUERY_KEY = "trainers";
 

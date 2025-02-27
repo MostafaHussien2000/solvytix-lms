@@ -1,7 +1,7 @@
 import { Course } from "@/types";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
-const baseURL = "";
+const baseURL = "http://localhost:5000/courses";
 
 const getAll = () => {
   return useQuery<Course[]>({

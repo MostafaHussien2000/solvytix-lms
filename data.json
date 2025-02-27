@@ -1,0 +1,195 @@
+{
+  "courses": [
+    {
+      "id": "770e8400-e29b-41d4-a716-446655440002",
+      "title": "Full-Stack Web Development",
+      "description": "Master full-stack development with React, Node.js, and MongoDB to build real-world applications.",
+      "price": 99.99,
+      "numberOfHours": 30,
+      "banner": "https://www.spec-india.com/wp-content/uploads/2020/06/Full_Stack.png",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "title": "React for Beginners",
+      "description": "A comprehensive introduction to React.js, covering components, state management, and hooks.",
+      "price": 49.99,
+      "numberOfHours": 12,
+      "banner": "https://i.ytimg.com/vi/nTeuhbP7wdE/maxresdefault.jpg",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
+    },
+    {
+      "id": "660e8400-e29b-41d4-a716-446655440001",
+      "title": "Node.js and Express Fundamentals",
+      "description": "Learn the basics of backend development using Node.js and Express, including REST APIs and database integration.",
+      "price": 59.99,
+      "numberOfHours": 15,
+      "banner": "https://th.bing.com/th/id/OIP.FklLshWZutJbS9YbH2VrEAAAAA?rs=1&pid=ImgDetMain",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
+    },
+    {
+      "id": "bb0e8400-e29b-41d4-a716-446655440006",
+      "title": "Cybersecurity Basics",
+      "description": "Understand the fundamentals of cybersecurity, ethical hacking, and protecting online systems.",
+      "price": 69.99,
+      "numberOfHours": 20,
+      "banner": "https://th.bing.com/th/id/OIP.4IiyDOaej0itAGJfZ-xRkgHaDt?rs=1&pid=ImgDetMain",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617185"
+    },
+    {
+      "id": "880e8400-e29b-41d4-a716-446655440003",
+      "title": "UI/UX Design Essentials",
+      "description": "An essential course for designing user-friendly and visually appealing web applications.",
+      "price": 39.99,
+      "numberOfHours": 10,
+      "banner": "https://i.ytimg.com/vi/JgXXwyb9aNA/maxresdefault.jpg",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617184"
+    },
+    {
+      "id": "990e8400-e29b-41d4-a716-446655440004",
+      "title": "Advanced JavaScript Concepts",
+      "description": "Deep dive into JavaScript, covering closures, async/await, prototypes, and design patterns.",
+      "price": 79.99,
+      "numberOfHours": 18,
+      "banner": "https://i.ytimg.com/vi/r5EdxMdENqI/maxresdefault.jpg",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
+    },
+    {
+      "id": "dd0e8400-e29b-41d4-a716-446655440008",
+      "title": "DevOps and Cloud Computing",
+      "description": "Learn DevOps practices and cloud technologies like AWS, Docker, and Kubernetes.",
+      "price": 109.99,
+      "numberOfHours": 28,
+      "banner": "https://i.morioh.com/2021/10/09/a0da276d.webp",
+      "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
+    }
+  ],
+  "trainers": [
+    {
+      "id": "1a2b3c4d-5678-9101-1121-314151617181",
+      "name": "John Doe",
+      "bio": "A passionate React developer with 5+ years of experience in front-end development.",
+      "image": "https://example.com/john-doe.jpg",
+      "hourlyRate": 50,
+      "courses": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440000",
+          "title": "React for Beginners",
+          "description": "A comprehensive introduction to React.js, covering components, state management, and hooks.",
+          "price": 49.99,
+          "numberOfHours": 12,
+          "banner": "https://i.ytimg.com/vi/nTeuhbP7wdE/maxresdefault.jpg",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
+        },
+        {
+          "id": "990e8400-e29b-41d4-a716-446655440004",
+          "title": "Advanced JavaScript Concepts",
+          "description": "Deep dive into JavaScript, covering closures, async/await, prototypes, and design patterns.",
+          "price": 79.99,
+          "numberOfHours": 18,
+          "banner": "https://i.ytimg.com/vi/r5EdxMdENqI/maxresdefault.jpg",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
+        }
+      ]
+    },
+    {
+      "id": "1a2b3c4d-5678-9101-1121-314151617182",
+      "name": "Jane Smith",
+      "bio": "Full-stack developer with a passion for teaching modern web technologies.",
+      "image": "https://example.com/jane-smith.jpg",
+      "hourlyRate": 60,
+      "courses": [
+        {
+          "id": "770e8400-e29b-41d4-a716-446655440002",
+          "title": "Full-Stack Web Development",
+          "description": "Master full-stack development with React, Node.js, and MongoDB to build real-world applications.",
+          "price": 99.99,
+          "numberOfHours": 30,
+          "banner": "https://www.spec-india.com/wp-content/uploads/2020/06/Full_Stack.png",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
+        },
+        {
+          "id": "660e8400-e29b-41d4-a716-446655440001",
+          "title": "Node.js and Express Fundamentals",
+          "description": "Learn the basics of backend development using Node.js and Express, including REST APIs and database integration.",
+          "price": 59.99,
+          "numberOfHours": 15,
+          "banner": "https://th.bing.com/th/id/OIP.FklLshWZutJbS9YbH2VrEAAAAA?rs=1&pid=ImgDetMain",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
+        },
+        {
+          "id": "dd0e8400-e29b-41d4-a716-446655440008",
+          "title": "DevOps and Cloud Computing",
+          "description": "Learn DevOps practices and cloud technologies like AWS, Docker, and Kubernetes.",
+          "price": 109.99,
+          "numberOfHours": 28,
+          "banner": "https://i.morioh.com/2021/10/09/a0da276d.webp",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
+        }
+      ]
+    },
+    {
+      "id": "1a2b3c4d-5678-9101-1121-314151617185",
+      "name": "Sophia Martinez",
+      "bio": "Cybersecurity expert with extensive knowledge in penetration testing and ethical hacking.",
+      "image": "https://example.com/sophia-martinez.jpg",
+      "hourlyRate": 90,
+      "courses": [
+        {
+          "id": "bb0e8400-e29b-41d4-a716-446655440006",
+          "title": "Cybersecurity Basics",
+          "description": "Understand the fundamentals of cybersecurity, ethical hacking, and protecting online systems.",
+          "price": 69.99,
+          "numberOfHours": 20,
+          "banner": "https://th.bing.com/th/id/OIP.4IiyDOaej0itAGJfZ-xRkgHaDt?rs=1&pid=ImgDetMain",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617185"
+        }
+      ]
+    },
+    {
+      "id": "1a2b3c4d-5678-9101-1121-314151617184",
+      "name": "Michael Brown",
+      "bio": "UI/UX designer with a decade of experience in creating intuitive and engaging designs.",
+      "image": "https://example.com/michael-brown.jpg",
+      "hourlyRate": 45,
+      "courses": [
+        {
+          "id": "880e8400-e29b-41d4-a716-446655440003",
+          "title": "UI/UX Design Essentials",
+          "description": "An essential course for designing user-friendly and visually appealing web applications.",
+          "price": 39.99,
+          "numberOfHours": 10,
+          "banner": "https://i.ytimg.com/vi/JgXXwyb9aNA/maxresdefault.jpg",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617184"
+        }
+      ]
+    },
+    {
+      "id": "1a2b3c4d-5678-9101-1121-314151617184",
+      "name": "Michael Lee",
+      "bio": "AI & Data Science specialist with 7+ years of experience in deep learning and big data.",
+      "image": "https://example.com/michael-lee.jpg",
+      "hourlyRate": 85,
+      "courses": [
+        {
+          "id": "cc0e8400-e29b-41d4-a716-446655440007",
+          "title": "Artificial Intelligence and Machine Learning",
+          "description": "An introduction to AI and ML, covering algorithms, neural networks, and real-world applications.",
+          "price": 129.99,
+          "numberOfHours": 35,
+          "banner": "https://th.bing.com/th/id/OIP._rARTmH18Aal1VEXs_BTHAHaEq?rs=1&pid=ImgDetMain",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617184"
+        },
+        {
+          "id": "aa0e8400-e29b-41d4-a716-446655440005",
+          "title": "Python for Data Science",
+          "description": "Learn Python for data analysis, machine learning, and data visualization using popular libraries.",
+          "price": 89.99,
+          "numberOfHours": 25,
+          "banner": "https://www.kdnuggets.com/wp-content/uploads/mayo-freecodecamp-python-data-science-course.jpg",
+          "trainerId": "1a2b3c4d-5678-9101-1121-314151617184"
+        }
+      ]
+    }
+  ]
+}
