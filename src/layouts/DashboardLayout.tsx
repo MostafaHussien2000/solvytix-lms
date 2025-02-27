@@ -10,7 +10,7 @@ function DashboardLayout() {
   return (
     <div>
       <Navbar />
-      <main>
+      <main className="container mx-auto py-6">
         <Outlet />
       </main>
     </div>

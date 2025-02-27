@@ -5,7 +5,7 @@ export interface Course {
   price: number;
   numberOfHours: number;
   banner: string;
-  trainerId?: string;
+  trainerId: string;
 }
 
 export interface Trainer {
@@ -14,7 +14,7 @@ export interface Trainer {
   bio: string;
   image: string;
   hourlyRate: number;
-  courses?: Course[];
+  courses: Course[];
 }
 
 export enum UserRole {
