@@ -60,7 +60,13 @@ const addOne = () => {
 const updateOne = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async ({ id, trainer }: { id: string; trainer: Trainer }) => {
+    mutationFn: async ({
+      id,
+      trainer,
+    }: {
+      id: string;
+      trainer: Partial<Trainer>;
+    }) => {
       try {
         const response = await fetch(`${baseURL}/${id}`, {
           method: "PATCH",

@@ -1,13 +1,12 @@
 import { Course } from "@/types";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-
-const baseURL = "http://localhost:5000/courses";
+import { coursesBaseURL, trainersBaseURL } from "./config";
 
 const getAll = () => {
   return useQuery<Course[]>({
     queryKey: ["courses"],
     queryFn: async () => {
-      const response = await fetch(baseURL);
+      const response = await fetch(coursesBaseURL);
       const data = await response.json();
       return data;
     },
@@ -19,7 +18,7 @@ const getOne = (id: string) => {
     queryKey: ["courses", id],
     queryFn: async () => {
       try {
-        const response = await fetch(`${baseURL}/${id}`);
+        const response = await fetch(`${coursesBaseURL}/${id}`);
         const data = await response.json();
         return data;
       } catch (err) {
@@ -34,21 +33,50 @@ const addOne = () => {
   return useMutation({
     mutationFn: async (course: Omit<Course, "id">) => {
       try {
-        const response = await fetch(baseURL, {
+        const courseResponse = await fetch(coursesBaseURL, {
           method: "POST",
+          body: JSON.stringify(course),
           headers: {
             "Content-Type": "application/json",
-            body: JSON.stringify(course),
           },
         });
-        const data = await response.json();
-        return data;
+
+        if (!courseResponse.ok) throw new Error("Failed to add this course.");
+
+        const createdCourse = await courseResponse.json();
+
+        const trainerResponse = await fetch(
+          `${trainersBaseURL}/${createdCourse.trainerId}`
+        );
+        if (!trainerResponse.ok) throw new Error("Trainer not found.");
+        const trainer = await trainerResponse.json();
+
+        const updatedTrainer = {
+          ...trainer,
+          courses: [...trainer.courses, createdCourse],
+        };
+
+        const updateTrainerResponse = await fetch(
+          `${trainersBaseURL}/${trainer.id}`,
+          {
+            method: "PATCH",
+            body: JSON.stringify(updatedTrainer),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (!updateTrainerResponse.ok) {
+          throw new Error("Failed to add course to this trainer's list.");
+        }
+
+        return createdCourse;
       } catch (err) {
         console.error(err);
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses"] });
+      queryClient.invalidateQueries({ queryKey: ["courses", "trainers"] });
     },
   });
 };
@@ -64,7 +92,7 @@ const updateOne = () => {
       updatedCourse: Partial<Course>;
     }) => {
       try {
-        const response = await fetch(`${baseURL}/${id}`, {
+        const response = await fetch(`${coursesBaseURL}/${id}`, {
           method: "PATCH",
           body: JSON.stringify(updatedCourse),
           headers: {
@@ -88,7 +116,7 @@ const deleteOne = () => {
   return useMutation({
     mutationFn: async (id: string) => {
       try {
-        const response = await fetch(`${baseURL}/${id}`, {
+        const response = await fetch(`${coursesBaseURL}/${id}`, {
           method: "DELETE",
         });
         const data = await response.json();
