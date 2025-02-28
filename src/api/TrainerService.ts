@@ -1,5 +1,6 @@
-import { Trainer } from "@/types";
+import { Course, Trainer } from "@/types";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { coursesBaseURL } from "./config";
 
 const baseURL = "http://localhost:5000/trainers";
 
@@ -87,22 +88,32 @@ const updateOne = () => {
   });
 };
 
-const deleteOne = () => {
+const deleteOne = (id: string) => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async (id: string) => {
+    mutationFn: async () => {
       try {
         const response = await fetch(`${baseURL}/${id}`, {
           method: "DELETE",
         });
         const data = await response.json();
+        data.courses.forEach(async (course: Course) => {
+          try {
+            await fetch(`${coursesBaseURL}/${course.id}`, {
+              method: "DELETE",
+            });
+          } catch (err) {
+            console.error(err);
+          }
+        });
         return data;
       } catch (err) {
         console.error(err);
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEY] });
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEY, "courses", id] });
+      return true;
     },
   });
 };

@@ -30,24 +30,31 @@ function DeleteItemModal({
   const courseMutation = deleteOneCourse(itemId);
 
   const { deleteOne: deleteOneTrainer } = useTrainers();
-  const trainerMutation = deleteOneTrainer();
+  const trainerMutation = deleteOneTrainer(itemId);
 
   const deleteCourse = () => {
-    console.log("Deleting course ...");
     courseMutation.mutate(undefined, {
       onSuccess: () => {
-        console.log("Course deleted.");
         onClose();
         navigate({ pathname: "/courses" });
       },
       onError: (error) => {
-        console.log("Course Deletion Error: ", error);
         onClose();
       },
     });
   };
 
-  const deleteTrainer = () => {};
+  const deleteTrainer = () => {
+    trainerMutation.mutate(undefined, {
+      onSuccess: () => {
+        onClose();
+        navigate({ pathname: "/trainers" });
+      },
+      onError: () => {
+        onClose();
+      },
+    });
+  };
 
   const deleteItem = itemType === "Course" ? deleteCourse : deleteTrainer;
 
