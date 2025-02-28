@@ -1,6 +1,7 @@
 import { useCourses } from "@/api/CourseService";
 import { Button } from "@/components/ui/button";
 import DeleteItemModal from "@/components/ui/delete-item";
+import Loader from "@/components/ui/loader";
 import { Clock, MoveLeft, Trash } from "lucide-react";
 import { useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -11,9 +12,17 @@ function CourseDetails() {
   if (!id) return <Navigate to="/courses" />;
 
   const { getOne } = useCourses();
-  const { data: course } = getOne(id);
+  const { data: course, isPending } = getOne(id);
+
+  if (isPending)
+    return (
+      <center className="space-y-6">
+        <Loader />
+      </center>
+    );
 
   if (!course) return <Navigate to="/courses" />;
+
   return (
     <div className="space-y-6 animate-in">
       <Link to="/courses" className="inline-flex items-center gap-2">

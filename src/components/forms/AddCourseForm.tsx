@@ -29,6 +29,7 @@ import {
 } from "../ui/select";
 import { Plus } from "lucide-react";
 import { Course } from "@/types";
+import Loader from "../ui/loader";
 
 interface AddCourseFormProps {
   open: boolean;
@@ -226,8 +227,13 @@ function AddCourseForm({ open, onClose, initialValues }: AddCourseFormProps) {
                 )}
               />
               <br />
-              <Button type="submit" className="w-full">
-                Add Course
+              <Button
+                type="submit"
+                className="w-full"
+                loading={methods.formState.isSubmitting ? "loading" : "static"}
+              >
+                {methods.formState.isSubmitting && <Loader />}
+                Add Trainer
               </Button>
             </form>
           </Form>

@@ -3,7 +3,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/ui/course-card";
 import DeleteItemModal from "@/components/ui/delete-item";
-import {} from "@radix-ui/react-avatar";
+import Loader from "@/components/ui/loader";
 import { MoveLeft, Trash } from "lucide-react";
 import { useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -14,7 +14,14 @@ function TrainerDetails() {
   if (!id) return <Navigate to="/trainers" />;
 
   const { getOne } = useTrainers();
-  const { data: trainer } = getOne(id);
+  const { data: trainer, isPending } = getOne(id);
+
+  if (isPending)
+    return (
+      <center className="space-y-6">
+        <Loader />
+      </center>
+    );
 
   if (!trainer) return <Navigate to="/trainers" />;
   return (
@@ -55,11 +62,19 @@ function TrainerDetails() {
       </div>
       <p className="bg-muted/50 p-4 rounded-md">{trainer.bio}</p>
       <h3 className="text-lg font-semibold">My Courses</h3>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {trainer.courses.map((course) => (
-          <CourseCard course={course} key={course.id} />
-        ))}
-      </div>
+      {trainer.courses.length > 1 ? (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {trainer.courses.map((course) => (
+            <CourseCard course={course} key={course.id} />
+          ))}
+        </div>
+      ) : (
+        <>
+          <center className="space-y-5 text-muted w-full">
+            No courses yet.
+          </center>
+        </>
+      )}
     </div>
   );
 }

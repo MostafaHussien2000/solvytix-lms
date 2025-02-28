@@ -20,6 +20,7 @@ import {
   validationSchema,
 } from "@/validation/trainerValidationSchema";
 import { z } from "zod";
+import Loader from "../ui/loader";
 
 interface AddTrainerFormProps {
   open: boolean;
@@ -154,7 +155,12 @@ function AddTrainerForm({ open, onClose }: AddTrainerFormProps) {
               )}
             />
             <br />
-            <Button type="submit" className="w-full">
+            <Button
+              type="submit"
+              className="w-full"
+              loading={methods.formState.isSubmitting ? "loading" : "static"}
+            >
+              {methods.formState.isSubmitting && <Loader />}
               Add Trainer
             </Button>
           </form>
