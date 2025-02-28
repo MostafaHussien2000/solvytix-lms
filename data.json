@@ -1,24 +1,6 @@
 {
   "courses": [
     {
-      "id": "770e8400-e29b-41d4-a716-446655440002",
-      "title": "Full-Stack Web Development",
-      "description": "Master full-stack development with React, Node.js, and MongoDB to build real-world applications.",
-      "price": 99.99,
-      "numberOfHours": 30,
-      "banner": "https://www.spec-india.com/wp-content/uploads/2020/06/Full_Stack.png",
-      "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
-    },
-    {
-      "id": "550e8400-e29b-41d4-a716-446655440000",
-      "title": "React for Beginners",
-      "description": "A comprehensive introduction to React.js, covering components, state management, and hooks.",
-      "price": 49.99,
-      "numberOfHours": 12,
-      "banner": "https://i.ytimg.com/vi/nTeuhbP7wdE/maxresdefault.jpg",
-      "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
-    },
-    {
       "id": "660e8400-e29b-41d4-a716-446655440001",
       "title": "Node.js and Express Fundamentals",
       "description": "Learn the basics of backend development using Node.js and Express, including REST APIs and database integration.",
@@ -53,15 +35,6 @@
       "numberOfHours": 18,
       "banner": "https://i.ytimg.com/vi/r5EdxMdENqI/maxresdefault.jpg",
       "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
-    },
-    {
-      "id": "dd0e8400-e29b-41d4-a716-446655440008",
-      "title": "DevOps and Cloud Computing",
-      "description": "Learn DevOps practices and cloud technologies like AWS, Docker, and Kubernetes.",
-      "price": 109.99,
-      "numberOfHours": 28,
-      "banner": "https://i.morioh.com/2021/10/09/a0da276d.webp",
-      "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
     }
   ],
   "trainers": [
@@ -72,15 +45,6 @@
       "image": "https://i.pravatar.cc/150?u=a042581f4e290267088",
       "hourlyRate": 50,
       "courses": [
-        {
-          "id": "550e8400-e29b-41d4-a716-446655440000",
-          "title": "React for Beginners",
-          "description": "A comprehensive introduction to React.js, covering components, state management, and hooks.",
-          "price": 49.99,
-          "numberOfHours": 12,
-          "banner": "https://i.ytimg.com/vi/nTeuhbP7wdE/maxresdefault.jpg",
-          "trainerId": "1a2b3c4d-5678-9101-1121-314151617181"
-        },
         {
           "id": "990e8400-e29b-41d4-a716-446655440004",
           "title": "Advanced JavaScript Concepts",
@@ -100,30 +64,12 @@
       "hourlyRate": 60,
       "courses": [
         {
-          "id": "770e8400-e29b-41d4-a716-446655440002",
-          "title": "Full-Stack Web Development",
-          "description": "Master full-stack development with React, Node.js, and MongoDB to build real-world applications.",
-          "price": 99.99,
-          "numberOfHours": 30,
-          "banner": "https://www.spec-india.com/wp-content/uploads/2020/06/Full_Stack.png",
-          "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
-        },
-        {
           "id": "660e8400-e29b-41d4-a716-446655440001",
           "title": "Node.js and Express Fundamentals",
           "description": "Learn the basics of backend development using Node.js and Express, including REST APIs and database integration.",
           "price": 59.99,
           "numberOfHours": 15,
           "banner": "https://th.bing.com/th/id/OIP.FklLshWZutJbS9YbH2VrEAAAAA?rs=1&pid=ImgDetMain",
-          "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
-        },
-        {
-          "id": "dd0e8400-e29b-41d4-a716-446655440008",
-          "title": "DevOps and Cloud Computing",
-          "description": "Learn DevOps practices and cloud technologies like AWS, Docker, and Kubernetes.",
-          "price": 109.99,
-          "numberOfHours": 28,
-          "banner": "https://i.morioh.com/2021/10/09/a0da276d.webp",
           "trainerId": "1a2b3c4d-5678-9101-1121-314151617182"
         }
       ]

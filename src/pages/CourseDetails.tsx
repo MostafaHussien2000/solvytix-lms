@@ -1,8 +1,12 @@
 import { useCourses } from "@/api/CourseService";
-import { Clock, MoveLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import DeleteItemModal from "@/components/ui/delete-item";
+import { Clock, MoveLeft, Trash } from "lucide-react";
+import { useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 function CourseDetails() {
+  const [deleteCourseModal, setDeleteCourseModal] = useState<boolean>(false);
   const { id } = useParams();
   if (!id) return <Navigate to="/courses" />;
 
@@ -15,7 +19,25 @@ function CourseDetails() {
       <Link to="/courses" className="inline-flex items-center gap-2">
         <MoveLeft size={16} /> <span>Back to all courses.</span>
       </Link>
-      <h1 className="text-2xl font-bold">{course.title}</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold">{course.title}</h1>
+        <div>
+          <Button
+            type="button"
+            size={"icon"}
+            variant={"destructive"}
+            onClick={() => setDeleteCourseModal(true)}
+          >
+            <Trash size={"16"} />
+          </Button>
+          <DeleteItemModal
+            itemType="Course"
+            itemId={course.id}
+            open={deleteCourseModal}
+            onClose={() => setDeleteCourseModal(false)}
+          />
+        </div>
+      </div>
       <div className="aspect-[21/9] relative rounded-2xl overflow-hidden">
         <img
           src={course.banner}

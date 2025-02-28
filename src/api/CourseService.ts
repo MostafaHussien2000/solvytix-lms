@@ -81,16 +81,16 @@ const addOne = () => {
   });
 };
 
-const updateOne = () => {
+const updateOne = ({
+  id,
+  updatedCourse,
+}: {
+  id: string;
+  updatedCourse: Partial<Course>;
+}) => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async ({
-      id,
-      updatedCourse,
-    }: {
-      id: string;
-      updatedCourse: Partial<Course>;
-    }) => {
+    mutationFn: async () => {
       try {
         const response = await fetch(`${coursesBaseURL}/${id}`, {
           method: "PATCH",
@@ -106,27 +106,51 @@ const updateOne = () => {
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses"] });
+      queryClient.invalidateQueries({ queryKey: ["courses", "trainers", id] });
     },
   });
 };
 
-const deleteOne = () => {
+const deleteOne = (id: string) => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async (id: string) => {
+    mutationFn: async () => {
       try {
-        const response = await fetch(`${coursesBaseURL}/${id}`, {
+        const courseDeletionResponse = await fetch(`${coursesBaseURL}/${id}`, {
           method: "DELETE",
         });
-        const data = await response.json();
-        return data;
+        if (!courseDeletionResponse.ok)
+          throw new Error("Unable to delete this course.");
+        const { trainerId, id: courseId } = await courseDeletionResponse.json();
+
+        const trainerResponse = await fetch(`${trainersBaseURL}/${trainerId}`);
+        if (!trainerResponse.ok) throw new Error("Cannot find this trainer.");
+        const trainer = await trainerResponse.json();
+
+        const trainerUpdatingResponse = await fetch(
+          `${trainersBaseURL}/${trainerId}`,
+          {
+            method: "PATCH",
+            body: JSON.stringify({
+              ...trainer,
+              courses: trainer.courses.filter(
+                (course: Course) => course.id !== courseId
+              ),
+            }),
+          }
+        );
+
+        if (!trainerUpdatingResponse.ok)
+          throw new Error(
+            "Cannot delete this course from this trainer's list."
+          );
+        return courseId;
       } catch (err) {
         console.error(err);
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses"] });
+      queryClient.invalidateQueries({ queryKey: ["courses", "trainers", id] });
     },
   });
 };
